@@ -1,6 +1,10 @@
-# vue-boilerplate
+# Vue Boilerplate
 
-> A Vue.js project
+## Using:
+  - Vue.js
+  - Vuetify
+  - Vuex
+  - Webpack 3
 
 ## Build Setup
 
@@ -17,5 +21,3 @@ yarn run build
 # build for production and view the bundle analyzer report
 yarn run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
