@@ -48,7 +48,7 @@ module.exports = {
       'Components': resolve('src/components'),
       'Models': resolve('src/models'),
       'Store': resolve('src/store'),
-      'Api': resolve('src/api-service'),
+      'Api': resolve('src/api-services'),
     },
   },
   module: {
