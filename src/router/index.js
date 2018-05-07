@@ -17,20 +17,16 @@ router.isCurrentRoute = (routeName) => {
 };
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.guest && store.getters.check) {
-    return next(to.meta.guest_redirect || '/home');
+  // logged in but shouldn't be
+  if (to.meta.guest && store.getters.isLogged) {
+    return next({ name: '/home' });
   }
-
-  if (!to.meta.guest && !store.getters.check) {
+  // not logged in but should be
+  if (!to.meta.guest && !store.getters.isLogged) {
     return next({ name: 'login' });
   }
-
-  if (to.name === 'logout' && store.getters.check) {
-    store.commit('deauth');
-    return next({ name: 'login' });
-  }
-
-  if (to.meta.admin && !store.getters.admin) {
+  // not admin but should be
+  if (to.meta.admin && !store.getters.isAdmin) {
     return next({ name: 'home' });
   }
 

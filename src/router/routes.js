@@ -1,8 +1,8 @@
 
-import Home from 'Components/Home.component';
-import Login from 'Components/Login.component';
-import Register from 'Components/Register.component';
-import Welcome from 'Components/Welcome.component';
+import Login from 'Components/auth/login.component';
+import Register from 'Components/auth/register.component';
+import Home from 'Components/home.component';
+import Welcome from 'Components/welcome.component';
 
 export const routes = [
   {
@@ -36,9 +36,5 @@ export const routes = [
     meta: {
       logged: true,
     },
-  },
-  {
-    path: '/logout',
-    name: 'logout',
   },
 ];

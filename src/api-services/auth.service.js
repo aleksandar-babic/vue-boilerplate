@@ -1,18 +1,15 @@
 import Axios from 'axios';
 
-const PREFIX = '/auth';
+const PREFIX = 'auth/';
 const ENDPOINTS = {
-  LOGIN: '/login',
-  REGISTER: '/signup',
-  CHANGE_PASSWORD: '/change-password',
+  LOGIN: 'login/',
+  REGISTER: 'register/',
+  CHANGE_PASSWORD: 'change-password/',
+  LOGOUT: 'logout/',
+  ACTIVE_USER: 'me/',
 };
-const AUTH_HEADER = 'Authorization';
 
 export default {
-  setAuthHeader() {
-    Axios.defaults.headers.common[AUTH_HEADER] = `JWT ${localStorage.getItem('token')}`;
-  },
-
   register(data) {
     return Axios.post(PREFIX + ENDPOINTS.REGISTER, data);
   },
@@ -23,5 +20,13 @@ export default {
 
   changePassword(data) {
     return Axios.put(PREFIX + ENDPOINTS.CHANGE_PASSWORD, data);
+  },
+
+  logout() {
+    return Axios.post(PREFIX + ENDPOINTS.LOGOUT);
+  },
+
+  refreshUser() {
+    return Axios.get(PREFIX + ENDPOINTS.ACTIVE_USER);
   },
 };

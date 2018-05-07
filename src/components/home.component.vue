@@ -1,5 +1,5 @@
 <template>
-  <h1>Home for logged in</h1>
+  <h1>Home for logged in user</h1>
 </template>
 
 <script>
